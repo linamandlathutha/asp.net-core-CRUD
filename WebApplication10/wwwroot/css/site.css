@@ -1,0 +1,339 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+header nav {
+    background: #96A74A;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-shadow: 0 3px 10px #999;
+    color: #fff;
+    margin-bottom: 70px;
+}
+
+        header nav a{
+            color:#fff;
+            text-decoration:none;
+            font-weight:bold;
+            text-shadow:0 0 3px #000;
+        }
+
+        .website-name{
+            font-size: 200%;
+        }
+
+        header nav ul{
+            list-style:none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        header nav ul li{
+            margin:0 20px;
+        }
+        
+        header nav ul li a {
+          font-size: 100%;
+          transition:.4s;
+        }
+        header nav ul li a:hover {
+          transform:scale(1.2)
+        }
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px #999;
+    border-radius: 10px;
+}
+    .banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(https://images.squarespace-cdn.com/content/v1/5d754d4ffd46617ddceb16f3/1660852843526-YYE2N63ZH6MPQUU2NERV/applying-cambridge.jpg);
+        background-position: center;
+        background-size: cover;
+        filter: brightness(50%);
+        border-radius: 10px;
+    }
+
+.delete-banner::before {
+    background-image: url(https://www.topuniversities.com/sites/default/files/styles/articles_inline/public/articles/lead-images/oldest_us_universities_main_image.jpg.webp) !important;
+}
+.display-banner::before {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a9/University_of_Otago.jpg) !important;
+}
+.update-banner::before {
+    background-image: url(https://www.immaculata.edu/wp-content/uploads/2023/07/Campus-0049.jpg) !important;
+}
+.create-banner::before {
+    background-image: url(https://le.ac.uk/-/media/uol/images/homepage/carousel-rotator/tef-2024.jpg?cx=0.66&cy=0.44&cw=1400&ch=700&hash=2ED0A82C499C794B1BBCFE72EA7199FD) !important;
+}
+.banner-title {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    font-size: 400%;
+    text-align: center;
+    font-weight: bolder;
+    font-family: system-ui;
+    position: relative;
+}
+.text-div {
+    margin: 70px auto;
+    width: 80%
+}
+    .text-div p {
+        font-size: 120%;
+        line-height: 35px;
+    }
+.create-profile p a {
+    color: #fff;
+    background: #96A74A;
+    padding: 5px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+    transition: .4s;
+}
+.create-profile p a:hover{
+    background:#3561e3;
+    box-shadow:0 0 5px grey;
+}
+
+.text-div input {
+    border-radius: 10px;
+    border: 2px solid #96A74A;
+    transition: .4s;
+    padding: 0 20px;
+}
+
+.text-div input:hover, .text-div input:focus{
+    border-radius: 10px;
+    border: 2px solid #3561e3;
+}
+    .text-div input[type="submit"] {
+        background: #96A74A;
+        color: #fff;
+        padding: 0 20px
+    }
+    .text-div input[type="submit"]:hover {
+        background: #3561e3;
+    }
+
+.display-none{
+    display:none !important;
+}
+
+.text-div .table {
+    border-radius: 10px;
+    border: 1px solid #96A74A;
+}
+    .text-div .table thead {
+        background: #96A74A;
+        color: #fff;
+        border-bottom: 1px solid #96A74A;
+        border-right: 1px solid #fff;
+    }
+    .text-div .table th {
+        border-right: 1px solid #fff;
+    }
+    .text-div .table td {
+        border: 1px solid #96A74A;
+    }
+    .text-div .table td a{
+        text-decoration:none;
+    }
+
+.modify-button {
+    padding: 3px 10px;
+    border-radius: 10px;
+    transform: .4s;
+}
+.modify-button a{
+    color:#fff;
+}
+.modify-button{
+    margin-right:1px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+}
+.modify-button ion-icon{
+    color:#fff;
+    margin-left:5px;
+}
+.edit-button {
+    background: #20E05D;
+}
+.details-button {
+    background: #2080E0;
+}
+.delete-button {
+    background: #F93E3E;
+}
+.edit-button:hover {
+    background: #0B8C34;
+}
+
+.details-button:hover {
+    background: #1159A2;
+}
+
+.delete-button:hover {
+    background: #A21111;
+}
+
+.text-div h4 {
+    font-weight: bolder;
+    font-size: 200%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap:10px;
+}
+
+.text-div .form-group{
+    margin-top:20px;
+}
+.text-div .form-group label {
+    margin-bottom: 5px;
+}
+.text-div .form-group input {
+    padding: 10px 20px;
+    outline:none !important;
+}
+
+.text-div .form-group input[type="submit"] {
+    margin-top:30px
+}
+dd a {
+    text-decoration: none;
+}
+.back-button {
+    margin-top: 20px;
+}
+.back-button a{
+    background: #3561e3;
+    color: #fff;
+    padding: 5px 20px;
+    transition.4s;
+    border-radius:10px;
+    text-decoration:none;
+    width:fit-content;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    float:right
+}
+    .back-button a:hover {
+        background: #96A74A;
+    }
+
+.update-button {
+    margin-top: 30px;
+}
+    .update-button a {
+        background: #96A74A;
+        color: #fff;
+        padding: 10px 20px;
+        transition .4s;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+.update-button a:hover {
+    background: #3561e3;
+}
+
+.horizontal-line {
+    width: 100%;
+    margin: 10px 0;
+    border-bottom: 1px solid #96A74A;
+}
+
+.action-button {
+    margin-top: 20px;
+}
+
+.action-button{
+    color: #fff;
+    padding: 5px 20px;
+    transition.4s;
+    border-radius:10px;
+    text-decoration:none;
+    width:fit-content;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+.action-button a{
+    color: #fff;
+    text-decoration:none;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+.no-button {
+    background: #20E05D;
+}
+.yes-button {
+    background: #F93E3E;
+}
+.no-button:hover {
+    background: #0B8C34;
+}
+
+.yes-button:hover {
+    background: #A21111;
+}
+
+.yes-button input[type="submit"] {
+    background: transparent;
+    padding:0px;
+    border:none;
+}
+
+    .yes-button input[type="submit"]:hover {
+        background: transparent;
+    }
+

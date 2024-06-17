@@ -1,0 +1,129 @@
+﻿@model IEnumerable<WebApplication10.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="banner">
+<h1 class="banner-title">Welcome to <br /> The University of Futureville</h1>
+</div>
+
+<div class="create-profile text-div">
+    <p>Welcome to The University of Futureville, where the quality of education takes priority.  student click register below to create your account. <br /> <br /> <a asp-action="Create"><ion-icon name="person-add"></ion-icon> Register Now</a> </p>
+</div>
+
+@using (Html.BeginForm("Index", "Student", FormMethod.Get))
+{
+    <div class="search-student text-div">
+
+        <p>
+            Our university has hundreds of students. However, if you're looking for specific student information, please use their student number to search for them in the search box below.
+        </p>
+
+        <p>
+            @Html.TextBox("searchTerm")
+            <input type="submit" value="Search" />
+        </p>
+
+    </div>
+}
+
+<div class="text-div">
+
+    <p>
+        List of students who have registered in The University of Futureville
+    </p>
+
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StudentID)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobileNumber)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+
+                </th>
+                <th>
+                    Modify Infomation
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobileNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+                    <td>
+                        <span class="edit-button modify-button">@Html.ActionLink("Edit", "Update", "Student", new { id = item.id }, null)<ion-icon name="pencil-sharp"></ion-icon> </span>
+                        <span class="details-button modify-button">@Html.ActionLink("Details", "Display", "Student", new { id = item.id })<ion-icon name="expand-outline"></ion-icon></span>
+                        <span class="delete-button modify-button">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id }, null)<ion-icon name="trash"></ion-icon>
+                        </span>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#name").focusout(function () {
+                if ($(this).val() == "") {
+                    $("#error").text('Search cannot be blank');
+                    $("#name").focusin();
+                }
+                else {
+                    $("#error").text('');
+                }
+            });
+        });
+
+    </script>
+}

@@ -1,0 +1,105 @@
+﻿@model WebApplication10.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="banner delete-banner">
+    <h1 class="banner-title">Delete Student Information</h1>
+</div>
+
+<div class="text-div">
+
+<br /><br />
+
+<div>
+
+<h3>Are you sure you want to delete @Html.DisplayFor(model => model.Name)'s information?</h3>
+
+<div>
+    <span class="no-button action-button"><a asp-action="Index"><ion-icon name="checkmark-sharp"></ion-icon> No</a></span>
+        
+    <span class="yes-button action-button"><form asp-action="DeleteConfirmed" method="post">
+        @Html.HiddenFor(a => a.id, Model.id)
+        <input type="submit" value="Yes" />
+    </form><ion-icon name="trash"></ion-icon></span>
+
+    <br /><br /><br />
+
+    <h3>Student Information</h3>
+
+    <br />
+
+    <dl class="row">
+        <dt class = "col-sm-2 display-none">
+            @Html.DisplayFor(model => model.id)
+        </dt>
+        <dd class = "col-sm-10 display-none">
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+        <div class="horizontal-line"></div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <div class="horizontal-line"></div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <div class="horizontal-line"></div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <div class="horizontal-line"></div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+
+        <div class="horizontal-line"></div>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteConfirmed" method="post">
+        @Html.HiddenFor(a => a.id, Model.id)
+        <input type="submit" value="Delete" />
+    </form>
+
+    <div class="back-button">
+    <a asp-action="Index"><ion-icon name="arrow-back"></ion-icon> Back to List</a>
+    </div>
+
+</div>
+
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
